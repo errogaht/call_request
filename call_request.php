@@ -17,18 +17,18 @@
     // 2. email settings
     require_once('PHPMailer/PHPMailerAutoload.php');
     $mail = new PHPMailer;
-    $mail->isSMTP();                                      // Set mailer to use SMTP
+    $mail->isSMTP();
     $mail->SMTPKeepAlive = true;
-    $mail->Host = 'smtp.yandex.ru';  // Specify main and backup SMTP servers
-    $mail->SMTPAuth = true;                               // Enable SMTP authentication
-    $mail->Username = 'lol@yandex.ru';                 // SMTP username
-    $mail->Password = '';                           // SMTP password
-    $mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
-    $mail->Port = 465;                                    // TCP port to connect to
+    $mail->Host = 'smtp.yandex.ru';
+    $mail->SMTPAuth = true;
+    $mail->Username = 'lol@yandex.ru';
+    $mail->Password = '';
+    $mail->SMTPSecure = 'ssl';
+    $mail->Port = 465;
     $mail->CharSet = 'UTF-8';
     $mail->From = 'lol@yandex.ru';
     $mail->FromName = $sender_name;
-    $mail->addAddress('lol@yandex.ru', 'Joe User');     // Add a recipient
+    $mail->addAddress('lol@yandex.ru', 'Joe User');
     $mail->isHTML(true);
     $email_text_callRequest = 'Обратный звонок';
     $email_text_fastOrder = 'Быстрый заказ';
@@ -56,6 +56,7 @@
         "Модель: " . $c_model . "\n" .
         "Цена: " . $c_price . "\n" .
         "Имя: " . $c_name . "\n" .
+        "Электропочта: " . $c_email . "\n" .
         "Телефон: " . $c_phone . "\n" .
         "Комментарий: " . $c_message;
       if ($sender == 'SMS') {$sms_text = $sender_name . ' ';}
